@@ -19,7 +19,7 @@ const Users = () => {
       <h1>{users.length}</h1>
       {users.map((user) => (
         <p key={user._id}>
-          {user.name}: {user.email} <Link><button to={`/update/${user._id}`}>Update</button></Link>
+          {user.name}: {user.email} <Link  to={`/update/${user._id}`}><button>Update</button></Link>
           <button onClick={() => handleDelete(user._id)}>X</button>
         </p>
       ))}

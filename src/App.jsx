@@ -1,4 +1,3 @@
-
 import './App.css'
 
 function App() {
@@ -9,6 +8,8 @@ const handleForm=(event)=>{
   const name= form.name.value;
   const user= {name, email}
   console.log(user)
+
+
   fetch('http://localhost:5000/users', {
     method: "POST",
     headers: {
@@ -18,12 +19,24 @@ const handleForm=(event)=>{
   })
   .then(res => res.json())
   .then(data =>{
-    if(data.insertedId){
-      alert('user added successfully')
-      form.reset()
-    }
     console.log(data)
+    form.reset()
   })
+  // fetch('http://localhost:5000/users', {
+  //   method: "POST",
+  //   headers: {
+  //     "content-type": 'application/json'
+  //   },
+  //   body: JSON.stringify(user)
+  // })
+  // .then(res => res.json())
+  // .then(data =>{
+  //   if(data.insertedId){
+  //     alert('user added successfully')
+  //     form.reset()
+  //   }
+  //   console.log(data)
+  // })
 }
 
   return (
